@@ -89,7 +89,7 @@ element {
 /*       header/end          */  
 /*       banner              */
 .banner {
-    background-image: url(/bgfon.jpg);
+    background-image: url(img/bgfon.jpg);
 }
 .banner__fon {
     height: 200px;
