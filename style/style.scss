@@ -1,0 +1,398 @@
+/* Переменные */
+$main-color: #faba4c;
+$white: #ffffff;
+$gray: rgb(92, 99, 105);
+$light-gray: rgb(129, 129, 129);
+$font-family-main: "Sintony";
+$font-family-alt: "Myriad Pro";
+$highlight-color: #fea100;
+$dark-bg: #373844;
+
+/* Миксин для box-sizing */
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Обнуление */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  @include box-sizing;
+}
+
+*:before, *:after {
+  @include box-sizing;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+/*----------------------------------------------------*/
+body {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+.container {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+element {
+  --main-color: $main-color;
+}
+
+/* Header */
+.header {
+  position: relative;
+  top: 0;
+  height: 70px;
+  margin-top: 24px;
+  background-color: $white;
+  
+  &__fl {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .logo {
+    margin-top: 17px;
+
+    &_img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__inner {
+    background: linear-gradient(to right,
+                                rgba($white, 0.44),
+                                rgba($white, 0.95),
+                                $white,
+                                rgba($white, 0.95),
+                                rgba($white, 0.44));
+    padding-left: 20%;
+    padding-right: 20%;
+    z-index: 10000000000;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, gray, transparent);
+    }
+  }
+
+  .cler__color {
+    padding-left: 3%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba($white, 0);
+  }
+
+  .nav {
+    margin-top: 3%;
+
+    &__link {
+      font-size: 18px;
+      padding: 7px;
+      color: rgb(44, 70, 90);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 2.143;
+      text-decoration: none;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+/* Banner */
+.banner {
+  background-image: url(img/fon.jpg);
+
+  &__fon {
+    height: 200px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    padding-top: 100px;
+    font-family: sans-serif;
+  }
+}
+
+.About_Us {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 2em;
+  font-family: $font-family-alt;
+  color: $white;
+  line-height: 0.536;
+}
+
+/* Out_history */
+.Out__history {
+  width: 100%;
+  margin-bottom: 60px;
+  padding-right: 13%;
+  padding-left: 13%;
+
+  .our {
+    font: 1em sans-serif;
+    padding-top: 5%;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(20, 20, 29);
+    line-height: 0.629;
+  }
+
+  .lorem {
+    margin: 33px 2% 0;
+    text-align: center;
+    font-size: 20px;
+    font-family: $font-family-alt;
+    color: $gray;
+    line-height: 1.857;
+  }
+
+  .video__scrin {
+    margin-top: 47px;
+    max-width: 2000px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Speciality */
+.Speciality {
+  background-color: blanchedalmond;
+  padding-right: 16%;
+  width: 100%;
+
+  .Sp__inner {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .text__Sp {
+    padding-left: 5%;
+  }
+
+  .title__Sp {
+    padding-top: 10%;
+    font-size: 20px;
+    color: rgb(20, 20, 29);
+  }
+
+  .mini__title {
+    padding-top: 40px;
+    font-size: 17px;
+    font-family: $font-family-alt;
+    color: rgb(20, 20, 29);
+    text-transform: uppercase;
+    line-height: 1.133;
+  }
+
+  .text__paragraph {
+    display: block;
+    padding-top: 20px;
+    font-size: 15px;
+    font-family: $font-family-main;
+    color: $gray;
+    line-height: 1.857;
+  }
+
+  .sp__img__main__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hr {
+    margin-top: 5%;
+    margin-left: -50%;
+    float: left;
+    width: 150%;
+    height: 2px;
+    background-color: $light-gray;
+  }
+}
+
+/* Menu */
+.main_menu {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $white;
+
+  .menu_text {
+    text-align: center;
+    font-family: $font-family-main;
+  }
+
+  .menu {
+    margin: 50px 27%;
+    display: flex;
+    justify-content: flex-start;
+
+    &1, &2, &3 {
+      width: 200px;
+
+      &:not(:last-child) {
+        margin-right: 90px;
+      }
+    }
+  }
+}
+
+/* Open */
+.open {
+  background-color: blanchedalmond;
+  margin-top: 10px;
+  width: 100%;
+
+  &__inner {
+    padding: 3.5% 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 35px;
+    padding-top: 7%;
+  }
+
+  .curs__title {
+    padding-top: 45%;
+    font-size: 20px;
+    font-family: "PlayfairDisplay", cursive;
+    color: rgb(59, 59, 70);
+    font-style: italic;
+    line-height: 1.2;
+  }
+
+  .orang__time {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: "PlayfairDisplay";
+    color: $highlight-color;
+    line-height: 1.2;
+  }
+
+  .open__img {
+    max-width: 210px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* Footer */
+footer {
+  padding-bottom: 70px;
+  background-color: $dark-bg;
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer__title {
+    font-family: "PlayfairDisplay";
+    font-weight: bold;
+    font-size: 24px;
+    color: $white;
+    opacity: 0.9;
+    padding-bottom: 25px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .item {
+    font-size: 13px;
+    font-family: $font-family-main;
+    line-height: 2;
+    color: $white;
+    opacity: 0.65;
+    list-style: none;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .email {
+    margin: 10px auto;
+    padding: 15px 10px 10px;
+    font-size: 12pt;
+    color: $white;
+    border-radius: 10px;
+    border: 2px solid $dark-bg;
+    background-color: $dark-bg;
+    width: 310px;
+    height: 50px;
+
+    &:hover {
+      background-color: $dark-bg;
+    }
+  }
+
+  .Subscribe {
+    margin-left: 10px;
+    font-size: 17px;
+    font-family: $font-family-main;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: $highlight-color;
+    width: 150px;
+    height: 53px;
+    transition: background 0.5s linear;
+
+    &:hover {
+      background-color: $white;
+      color: $highlight-color;
+    }
+  }
+
+  .icon {
+    margin-top: 30px;
+
+    &_img {
+      padding: 0 15px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
